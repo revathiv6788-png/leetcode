@@ -19,19 +19,19 @@ class Solution {
         {
             if(cur.child!=null)
             {
-                Node next=cur.next;
-                cur.next=flatten(cur.child);
+                Node next=cur.next;//ithula change agatha oru oru time um
+                cur.next=flatten(cur.child);//ithu appo mela itunthu varatha and return ana aprom tha next nadakkuma 
                 cur.next.prev=cur;
-                cur.child=null;
+                cur.child=null;//important
                 while(cur.next!=null)
                 {
-                cur=cur.next;
+                    cur=cur.next;
                 }
                 if(next!=null)
-            {
-                cur.next=next;
-                next.prev=cur;
-            }
+                {
+                    cur.next=next;
+                    next.prev=cur;
+                }
             }
             cur=cur.next;
         }
