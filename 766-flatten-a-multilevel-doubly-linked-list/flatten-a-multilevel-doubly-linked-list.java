@@ -12,7 +12,7 @@ class Solution {
     public Node flatten(Node head) {
         if(head==null)
         {
-            return head;
+            return null;
         }
         Node cur=head;
         while(cur!=null)
