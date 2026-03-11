@@ -7,7 +7,7 @@ class MinStack {
     }
     
     public void push(int val) {
-        source.push(val);
+        source.push(val);//interface la ulla push kku
         if(minstack.isEmpty()||val<=minstack.peek())
         {
             minstack.push(val);
