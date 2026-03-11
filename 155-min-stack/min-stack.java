@@ -31,7 +31,14 @@ class MinStack {
     }
     
     public int top() {
+        if(!source.isEmpty())
+        {
         return source.peek();
+        }
+        else
+        {
+            return -1;
+        }
     }
     
     public int getMin() {
