@@ -13,7 +13,11 @@ class MinStack {
     }
     
     public void pop() {
-         if(!source.peek().equals(minstack.peek()))
+        if(source.isEmpty())
+        {
+            return;
+        }
+         if(!source.peek().equals(minstack.peek()))//!=use panna koodathu
          {
             source.pop();
          }
