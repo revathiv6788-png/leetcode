@@ -12,7 +12,7 @@ class MyStack {
         {
             q1.offer(q2.poll());
         }
-        Queue<Integer> temp=q2;//only for reference not extra queue
+        Queue<Integer> temp=q1;//only for reference not extra queue
         temp=q2;
         q2=q1;
         q1=temp;
