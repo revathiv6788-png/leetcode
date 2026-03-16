@@ -7,7 +7,7 @@ class Solution {
             Arrays.fill(board[i],'.');//oru oru row va . fill pannum Arrays.fill()
         }
         place(board,0,result);
-        return result.size();
+        return result.size();//important
     }
     public void place(char[][] board,int row,List<List<String>> result)
     {
