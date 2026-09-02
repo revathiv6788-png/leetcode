@@ -1,29 +1,39 @@
 class Solution {
     public int[] findMissingAndRepeatedValues(int[][] grid) {
         int n=grid.length;
-        int size=n*n;
-        int repeat=0,missing=0;
-        boolean visited[]=new boolean[size+1];//why size+1 missing element kku
-        for(int row[]:grid)
+        int m=grid[0].length;
+        // int[] arr=new int[n*n];
+        // for(int i=0i<n;i++)
+        // {
+        //     for(int j=0;j<m;j++)
+        //     {
+        //         arr[]=grid[i][j];
+        //     }
+        // }
+        // Arrays.sort(arr);
+        // for(int i=1;i<=arr.length;i++)
+        // {
+        //     if(arr[i]==arr[])
+        // }
+        boolean a[]=new boolean[n*n];
+        int ans[]=new int[2];
+        for(int i=0;i<n;i++)
         {
-            for(int num:row)
+            for(int j=0;j<n;j++)
             {
-                if(visited[num])
-                {
-                    repeat=num;
-                }
-                visited[num]=true;
+                if(a[grid[i][j]-1]) //a[grid[i][j]-1]check index 
+                ans[0]=grid[i][j];
+                else
+                a[grid[i][j]-1]=true;
             }
         }
-        //missing
-        for(int i=1;i<=size;i++)
+        for(int i=0;i<a.length;i++)
         {
-            if(!visited[i])
+            if(!a[i])
             {
-                missing=i;
-                break;
+                ans[1]=i+1;
             }
         }
-        return new int[]{repeat,missing};
+        return ans;
     }
 }
