@@ -14,22 +14,31 @@
  * }
  */
 class Solution {
-    public void backtrack(TreeNode root,List<Integer> result,int level)
-    {
-         if(root==null)
-        {
-            return;
-        }
-        if(result.size()==level)
-        {
-            result.add(root.val);
-        }
-        backtrack(root.right,result,level+1);
-        backtrack(root.left,result,level+1);
-    }
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result=new ArrayList<>();
-        backtrack(root,result,0);
-        return result;
+        List<Integer> ans=new ArrayList<>();
+        Queue<TreeNode> q=new LinkedList<>();
+        if(root==null)
+        return ans;
+        q.add(root);
+        while(!q.isEmpty())
+        {
+            List<Integer>levelElement=new ArrayList<>();
+            int n=q.size();
+            for(int i=0;i<n;i++)
+            {
+                TreeNode temp=q.poll();
+                levelElement.add(temp.val);
+                if(temp.left!=null)
+                {
+                    q.add(temp.left);
+                }
+                if(temp.right!=null)
+                {
+                    q.add(temp.right);
+                }
+            }
+            ans.add(levelElement.get(levelElement.size()-1));
+        }
+        return ans;
     }
 }
